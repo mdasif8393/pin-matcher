@@ -104,3 +104,11 @@ color: #E0B612;
     color: #FF3C5F;
     margin-top: 10px;
 }
+/* 1. pin does not match display class  */
+.pin-not-match-display{
+    display: none;
+}
+/* 2. pin match display class  */
+.pin-match-display{
+    display: none;
+}

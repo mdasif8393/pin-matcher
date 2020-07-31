@@ -12,8 +12,10 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="pin-generator half-width">
-                    <input class="form-control" type="text">
-                    <button class="generate-btn">Generate Pin</button>
+                    <!-- 4. random number show display id declare -->
+                    <input id="random-number-display" class="form-control" type="text">
+                    <!-- 3. random number button id declare -->
+                    <button id="random-button" class="generate-btn">Generate Pin</button>
                 </div>
             </div>
             <div class="col-md-6">
@@ -50,9 +52,25 @@
             </div>
         </div>
         <div class="notify-section">
-            <p class="notify">❌ Pin Didn't Match, Please try again</p>
-            <p class="notify">✅ Pin Matched... Secret door is opening for you</p>
+            <!-- 1. pin not match class declare -->
+            <p class="notify pin-not-match-display ">❌ Pin Didn't Match, Please try again</p>
+            <!-- 2. pin match class declare -->
+            <p class="notify pin-match-display">✅ Pin Matched... Secret door is opening for you</p>
         </div>
     </div>
+
+    <!-- javascript -->
+    <script>
+        // 5.random number button listener added
+        document.getElementById('random-button').addEventListener('click',function(){
+            //6. create random number
+            var randomNumber = Math.round(Math.random()*10000);
+            console.log(randomNumber);
+            //7. show random number in display
+            var randomNumberDisplay = document.getElementById('random-number-display');
+            randomNumberDisplay.value = randomNumber;
+        });
+        
+    </script>
 </body>
 </html>
