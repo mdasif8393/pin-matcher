@@ -20,28 +20,30 @@
             </div>
             <div class="col-md-6">
                 <div class="input-section half-width">
-                    <input class="form-control" type="text">
+                    <!-- 10. pin display id create -->
+                    <input id="pin-display" class="form-control" type="text">
                     <div class="numbers">
                         <div class="calc-body">
                             <div class="calc-button-row">
-                              <div class="button">7</div>
-                              <div class="button">8</div>
-                              <div class="button">9</div>
+                                <!-- 8. buttons id declare -->
+                              <div id="seven-btn" class="button">7</div>
+                              <div id="eight-btn" class="button">8</div>
+                              <div id="nine-btn" class="button">9</div>
                             </div>
                             <div class="calc-button-row">
-                              <div class="button">4</div>
-                              <div class="button">5</div>
-                              <div class="button">6</div>
+                              <div id="four-btn" class="button">4</div>
+                              <div id="five-btn" class="button">5</div>
+                              <div id="six-btn" class="button">6</div>
                             </div>
                             <div class="calc-button-row">
-                              <div class="button">1</div>
-                              <div class="button">2</div>
-                              <div class="button">3</div>
+                              <div id="one-btn" class="button">1</div>
+                              <div id="two-btn" class="button">2</div>
+                              <div id="three-btn" class="button">3</div>
                             </div>
                             <div class="calc-button-row">
-                                <div class="button"><</div>
-                                <div class="button">0</div>
-                                <div class="button">C</div>
+                                <div id="backspace-btn" class="button"><</div>
+                                <div id="zero-btn" class="button">0</div>
+                                <div id="clear-btn" class="button">C</div>
                             </div>
                             <div>
                                 <button type="submit" class="submit-btn">Submit</button>
@@ -64,13 +66,25 @@
         // 5.random number button listener added
         document.getElementById('random-button').addEventListener('click',function(){
             //6. create random number
-            var randomNumber = Math.round(Math.random()*10000);
-            console.log(randomNumber);
+            var randomNumber =parseInt(Math.round(Math.random()*10000)) ;
             //7. show random number in display
             var randomNumberDisplay = document.getElementById('random-number-display');
             randomNumberDisplay.value = randomNumber;
+            var randomNumberValue = parseInt(randomNumberDisplay.value);
         });
-        
+        //9. button add event listener
+        document.getElementById('seven-btn').addEventListener('click',function(){
+            var display = document.getElementById('pin-display');
+            display.value = display.value += '7';
+            var btnValue = parseInt(display.value);
+            console.log(btnValue);
+        });
+        document.getElementById('eight-btn').addEventListener('click',function(){
+            var eight = document.getElementById('eight-btn');
+            var display = document.getElementById('pin-display');
+            display.value = display.value += '8';
+        });
+
     </script>
 </body>
 </html>
