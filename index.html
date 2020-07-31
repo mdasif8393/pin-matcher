@@ -46,7 +46,7 @@
                                 <div id="clear-btn" class="button">C</div>
                             </div>
                             <div>
-                                <button type="submit" class="submit-btn">Submit</button>
+                                <button id="submit-btn" type="submit" class="submit-btn">Submit</button>
                                 <p class="action-left">3 try left</p>
                             </div>
                     </div>
@@ -54,10 +54,10 @@
             </div>
         </div>
         <div class="notify-section">
-            <!-- 1. pin not match class declare -->
-            <p class="notify pin-not-match-display ">❌ Pin Didn't Match, Please try again</p>
-            <!-- 2. pin match class declare -->
-            <p class="notify pin-match-display">✅ Pin Matched... Secret door is opening for you</p>
+            <!-- 1. pin not match class and id declare -->
+            <p id="pin-not-match" class="notify pin-not-match-display ">❌ Pin Didn't Match, Please try again</p>
+            <!-- 2. pin match class and id declare -->
+            <p id="pin-match" class="notify pin-match-display">✅ Pin Matched... Secret door is opening for you</p>
         </div>
     </div>
 
@@ -110,7 +110,7 @@
          //14. button add event listener for button 6
         document.getElementById('six-btn').addEventListener('click',function(){
             var display = document.getElementById('pin-display');
-            display.value = display.value += '9';
+            display.value = display.value += '6';
             var btnValue = parseInt(display.value);
             console.log(btnValue);
         });
@@ -142,6 +142,23 @@
             var btnValue = parseInt(display.value);
             console.log(btnValue);
         });
+        //17.submit button add event listener
+        document.getElementById('submit-btn').addEventListener('click',function(){
+            //18.get random number from random number display
+            var randomNumber = parseInt(document.getElementById('random-number-display').value);
+            console.log(randomNumber);
+            //19.get pin number from random number display
+            var pinNumber = parseInt(document.getElementById('pin-display').value);
+            console.log(pinNumber);
+            //20. 
+            if(randomNumber == pinNumber){
+               document.getElementById('pin-match').style.display="block";
+            }
+            else{
+                document.getElementById('pin-not-match').style.display="block";
+            }
+        })
+        
 
         
 
