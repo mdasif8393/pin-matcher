@@ -150,14 +150,24 @@
             //19.get pin number from random number display
             var pinNumber = parseInt(document.getElementById('pin-display').value);
             console.log(pinNumber);
-            //20. 
+            //20. check random number and pin input match or not match
             if(randomNumber == pinNumber){
                document.getElementById('pin-match').style.display="block";
             }
             else{
                 document.getElementById('pin-not-match').style.display="block";
             }
-        })
+        });
+        //21. clear button add event listener
+        document.getElementById('clear-btn').addEventListener('click',function(){
+            document.getElementById('pin-display').value='';
+        });
+        //22. backspace button add event listener
+        document.getElementById("backspace-btn").addEventListener('click',function(){
+            // document.getElementById('pin-display').value = Math.floor(parseInt(document.getElementById('pin-display').value)/10);
+            console.log(document.getElementById('pin-display').value);
+                 
+        });
         
 
         
